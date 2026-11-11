@@ -17,10 +17,10 @@ php -S localhost:8000
 
 Open http://localhost:8000/php-version/.
 
-## Hosting
-**Do not use GitHub Pages for this PHP version.** GitHub Pages only serves static files and will not execute `.php` files. Deploy the repository (or just this folder and its shared stylesheet) to a PHP-enabled host such as InfinityFree, a cPanel/Hostinger PHP hosting account, or a VPS with PHP configured.
+## Hosting on Vercel
+The repository root now contains a `Dockerfile`, `Caddyfile`, and `vercel.json` configured for Vercel's Container runtime with FrankenPHP. Import the repository into Vercel, keep Root Directory set to `./`, use the Container framework preset, and deploy from the root. See `VERCEL_DEPLOYMENT.md` for the complete steps.
 
-For a basic shared host, upload the contents of `php-version/` into the site's public web directory and also upload the root `style.css` file one directory above it, or change the stylesheet path to match where you place it.
+**GitHub Pages cannot execute PHP.** It continues to serve the separate static version from the root `index.html`.
 
 ## Data handling
 This educational demo validates and displays the submitted details. It does not store them in a database or send email. Avoid entering real sensitive personal information on a public demo.
