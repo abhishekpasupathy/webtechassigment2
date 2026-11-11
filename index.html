@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Online student registration form">
+  <title>Student Registration | RVITM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="topbar">
+      <a class="brand" href="#" aria-label="RVITM registration home">
+        <span class="brand-mark">R</span>
+        <span><strong>RVITM</strong><small>STUDENT PORTAL</small></span>
+      </a>
+      <span class="secure-label"><span class="live-dot"></span> REGISTRATION PORTAL</span>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow"><span></span> ONLINE APPLICATION</div>
+      <h1>Start your next<br><span>chapter here.</span></h1>
+      <p>Complete the form below to submit your student registration details. All fields marked with an asterisk are required.</p>
+      <div class="hero-meta"><span>01 — YOUR DETAILS</span><span>02 — REVIEW & SUBMIT</span></div>
+      <div class="progress-track"><span></span></div>
+    </section>
+
+    <section class="form-card" aria-labelledby="form-title">
+      <div class="card-heading">
+        <div><div class="section-kicker">APPLICATION FORM / 2026–27</div><h2 id="form-title">Personal information</h2></div>
+        <span class="required-note"><b>*</b> REQUIRED FIELDS</span>
+      </div>
+
+      <form id="registrationForm" novalidate>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="fullName">Full name <b>*</b></label>
+            <input id="fullName" name="fullName" type="text" placeholder="Enter your full name" autocomplete="name" required>
+            <small class="error-message"></small>
+          </div>
+          <div class="field">
+            <label for="email">Email address <b>*</b></label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <small class="error-message"></small>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number <b>*</b></label>
+            <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" required>
+            <small class="error-message"></small>
+          </div>
+          <div class="field">
+            <label for="dob">Date of birth <b>*</b></label>
+            <input id="dob" name="dob" type="date" required>
+            <small class="error-message"></small>
+          </div>
+          <div class="field">
+            <label for="gender">Gender <b>*</b></label>
+            <select id="gender" name="gender" required>
+              <option value="">Select an option</option>
+              <option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option>
+            </select>
+            <small class="error-message"></small>
+          </div>
+          <div class="field">
+            <label for="course">Course / programme <b>*</b></label>
+            <select id="course" name="course" required>
+              <option value="">Choose your programme</option>
+              <option>Computer Science & Engineering</option>
+              <option>Information Science & Engineering</option>
+              <option>Electronics & Communication Engineering</option>
+              <option>Artificial Intelligence & Machine Learning</option>
+              <option>Other</option>
+            </select>
+            <small class="error-message"></small>
+          </div>
+          <div class="field">
+            <label for="year">Year of study <b>*</b></label>
+            <select id="year" name="year" required>
+              <option value="">Select year</option>
+              <option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option>
+            </select>
+            <small class="error-message"></small>
+          </div>
+          <div class="field full">
+            <label for="address">Address <b>*</b></label>
+            <textarea id="address" name="address" rows="3" placeholder="House / street, area, city, state, PIN code" required></textarea>
+            <small class="error-message"></small>
+          </div>
+        </div>
+        <label class="consent"><input id="consent" type="checkbox" required><span>I confirm that the information provided above is accurate and complete.</span></label>
+        <small class="consent-error" aria-live="polite"></small>
+        <button class="submit-button" type="submit"><span>Submit application</span><span class="button-arrow">↗</span></button>
+        <p class="privacy-note"><span>▣</span> Your information is displayed only in this browser demo.</p>
+      </form>
+    </section>
+
+    <section id="successPanel" class="result-card" hidden aria-live="polite">
+      <div class="success-icon">✓</div>
+      <div class="section-kicker">SUBMISSION COMPLETE</div>
+      <h2>You're all set.</h2>
+      <p class="result-intro">Your registration details have been submitted successfully in this demo.</p>
+      <div class="receipt-heading"><span>APPLICATION SUMMARY</span><span id="applicationId"></span></div>
+      <div id="resultDetails" class="result-details"></div>
+      <div class="result-actions">
+        <button id="printButton" class="secondary-button" type="button">Print summary ↗</button>
+        <button id="newButton" class="text-button" type="button">Submit another response</button>
+      </div>
+    </section>
+
+    <footer><span>© 2026 RVITM · STUDENT REGISTRATION</span><span>BUILT WITH HTML · CSS · JS · jQUERY</span></footer>
+  </main>
+</body>
+</html>
